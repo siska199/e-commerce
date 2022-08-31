@@ -6,6 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "apollo-server-core": "^3.10.2",
+    "apollo-server-micro": "^3.10.2",
+    "graphql": "^16.6.0",
+    "micro": "^9.4.1",
+    "mongodb": "^4.9.0",
+    "mongoose": "^6.5.4",
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0"

@@ -3,6 +3,7 @@ import {ApolloServer} from "apollo-server-micro"
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 import typeDefs from "../../graphql/typedefs"
 import resolvers from "../../graphql/resolvers"
+import dbConnect from '../../lib/dbConnect';
 
 const server = new ApolloServer({
   typeDefs,
@@ -14,11 +15,15 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  await startServer
-  await server.createHandler({
-    path:"/api/graphql"
-  })(req,res)
-
+  try {    
+    await dbConnect()
+    await startServer
+    await server.createHandler({
+      path:"/api/graphql"
+    })(req,res)
+  } catch (error) {
+    res.status(500).send(`${error}`)
+  }
 }
 
 export const config = {

@@ -70,7 +70,7 @@ const ProductSchema = new Schema({
             required : [true, `Product's sizes shouldn't be empty`],
         },
 	}
-})
+},{timestamps:{createdAt:true, updatedAt:true}})
 
 export default models.products || model("product", ProductSchema)
 

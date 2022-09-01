@@ -1,7 +1,5 @@
 import { Schema, models, model, SchemaTypes } from 'mongoose';
 
-
-
 const CartSchema = new Schema({
 	user : {
         type : SchemaTypes.ObjectId,
@@ -13,10 +11,18 @@ const CartSchema = new Schema({
                 type : SchemaTypes.ObjectId,
                 required : true
             },
-			quantity : {type:Number, required :true},
+			quantity : {
+                type:Number, 
+                required :true
+            },
 			options : {
-				color : {type:String, required :true},
-				size : {type:String, required :true}
+				color : {
+                    type:String, 
+                    required :true
+                },
+				size : {
+                    type:String, 
+                required :true}
 			}
 		}		
 	],

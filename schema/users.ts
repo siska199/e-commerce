@@ -22,6 +22,7 @@ const UserSchema = new Schema({
 	image : {
         type : String,
         trim : true,
+        default : "https://i.pinimg.com/564x/5d/0e/0a/5d0e0a87b98710516fcd28111d773fca.jpg"
     },
     role :{
         type : String,

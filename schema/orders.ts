@@ -1,7 +1,5 @@
 import { Schema, models, model, SchemaTypes } from 'mongoose';
 
-
-
 const OrderSchema = new Schema({
 	user : {
         type : SchemaTypes.ObjectId,
